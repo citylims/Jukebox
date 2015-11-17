@@ -1,5 +1,5 @@
 node_modules
 .tmp
 .sass-cache
-.tools.js
-app/bower_components
+.apiConfig.js
+public/assts/bower_components
