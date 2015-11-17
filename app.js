@@ -1,9 +1,11 @@
 var express = require('express');
+var exphbs  = require('express3-handlebars');
 var request = require('request');
 var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
 var apiConfig = require('./.apiConfig');
 var myUtils = require('./myUtils')
+
 
 var client_id = '27abb617a029486f9665b4a0a0c6adfe';
 var client_secret = apiConfig.genKey();
@@ -12,8 +14,14 @@ var stateKey = 'spotify_auth_state';
 
 var app = express();
 
+app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
 app.use(express.static(__dirname + '/public'))
    .use(cookieParser());
+
+app.get('/', function(req, res) {
+  res.render('index');
+})
 
 app.get('/login', function(req, res) {
 
