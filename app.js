@@ -87,6 +87,7 @@ app.get('/callback', function(req, res) {
         // spotify access token
         request.get(options, function(error, response, body) {
           console.log(body);
+          console.log(Boooya);
         });
 
         // pass the token to the browser to make requests from there

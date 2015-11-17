@@ -1,10 +1,14 @@
-'use strict';
+(function() {
 
-angular.module('jukebox')
-  .controller('loginCtrl', loginCtrl);
+  'use strict';
 
-  loginCtrl.$inject = ["$scope", "$http", "$state"];
+  angular.module('jukebox')
+    .controller('loginCtrl', loginCtrl);
 
-  function loginCtrl($scope, $http, $state) {
-    var vm = this
-  }
+    loginCtrl.$inject = ["$scope", "$http", "$state"];
+
+    function loginCtrl($scope, $http, $state) {
+      var vm = this
+    }
+
+})();

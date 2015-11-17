@@ -1,10 +1,14 @@
-'use strict';
+(function() {
 
-angular.module('jukebox')
-  .controller('JukeboxCtrl', JukeboxCtrl);
+  'use strict';
 
-  JukeBoxCtrl.$inject = ["$scope", "$http", "$state"];
+  angular.module('jukebox')
+    .controller('JukeboxCtrl', JukeboxCtrl);
 
-  function JukeboxCtrl($scope, $http, $state) {
-    var vm = this
-  }
+    JukeboxCtrl.$inject = ["$scope", "$http", "$state"];
+
+    function JukeboxCtrl($scope, $http, $state) {
+      var vm = this
+    }
+
+})()

@@ -1,24 +1,26 @@
-'use strict';
+(function() {
+  'use strict';
 
-angular
-  .module('jukebox', ['jukebox.controllers'])
-  .config(config);
-
+  angular
+    .module('jukebox', ['ui.router'])
+    .config(config);
 
   function config($stateProvider, $urlRouterProvider) {
     $stateProvider
 
-    .state("login", {
-      url: "/login",
-      controller: "loginCtrl",
-      template: "templates/login.html"
-    });
+      .state('login', {
+        url: '/login',
+        templateUrl: 'templates/login.html',
+        controller: 'LoginCtrl as vm',
+      })
 
-    .state("jukebox", {
-      url: "/",
-      controller: "homeCtrl",
-      template: "templates/jukebox.html"
-    });
+      .state('jukebox', {
+        url: '/jukebox',
+        templateUrl: 'templates/jukebox.html',
+        controller: 'JukeboxCtrl as vm',
+      })
 
-    $urlRouterProvider.otherwise("/login");
-  }
+    $urlRouterProvider.otherwise('/');
+  };
+
+})();
