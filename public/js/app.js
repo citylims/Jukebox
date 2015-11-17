@@ -8,19 +8,19 @@
   function config($stateProvider, $urlRouterProvider) {
     $stateProvider
 
-      .state('login', {
-        url: '/login',
-        templateUrl: 'templates/login.html',
-        controller: 'LoginCtrl as vm',
+      .state('home', {
+        url: '/home',
+        templateUrl: 'templates/home.html',
+        controller: 'HomeCtrl',
       })
 
       .state('jukebox', {
         url: '/jukebox',
         templateUrl: 'templates/jukebox.html',
-        controller: 'JukeboxCtrl as vm',
+        controller: 'JukeboxCtrl',
       })
 
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/home');
   };
 
 })();

@@ -22,10 +22,9 @@ app.use('/', express.static(__dirname + '/public'))
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-
-app.get('/', function(req, res) {
-  res.render('index');
-})
+app.get('*', function(req, res) {
+      res.sendfile('./public/index.html'); 
+  });
 
 app.get('/login', function(req, res) {
 
