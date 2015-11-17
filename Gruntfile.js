@@ -258,7 +258,7 @@ module.exports = function (grunt) {
         'sass:dev',
         'express:dev',
         'open:site',
-        'open:editor',
+        //'open:editor',
         'watch'
     ]);
 
@@ -268,7 +268,7 @@ module.exports = function (grunt) {
         'express:dev',
         'watch'
     ]);
-    
+
 
     // Build
     grunt.registerTask('build', 'Build production ready assets and views.', [
