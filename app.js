@@ -1,6 +1,7 @@
 var express = require('express');
 var exphbs  = require('express3-handlebars');
 var request = require('request');
+var bodyParser = require('body-parser');
 var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
 var apiConfig = require('./.apiConfig');
@@ -18,6 +19,9 @@ app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 app.use('/', express.static(__dirname + '/public'))
    .use(cookieParser());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
 
 app.get('/', function(req, res) {
   res.render('index');
