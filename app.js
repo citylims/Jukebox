@@ -2,11 +2,11 @@ var express = require('express');
 var request = require('request');
 var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
-var tools = require('./.tools');
+var apiConfig = require('./.apiConfig');
 var myUtils = require('./myUtils')
 
-var client_id = '03ffe0cac0a0401aa6673c3cf6d02ced';
-var client_secret = 'a57c43efb9644574a96d6623fb8bfbc2';
+var client_id = '27abb617a029486f9665b4a0a0c6adfe';
+var client_secret = apiConfig.genKey();
 var redirect_uri = 'http://localhost:8888/callback';
 var stateKey = 'spotify_auth_state';
 
@@ -118,7 +118,7 @@ app.get('/refresh_token', function(req, res) {
 });
 
 console.log('Listening on 8888');
-var key = tools.genKey();
+var key = apiConfig.genKey();
 var rando = myUtils.generateRandomString(20);
 console.log(key);
 console.log(rando);
